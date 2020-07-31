@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1"> 
+		<title>一封小情书</title>
+		<meta name="description" content="一封小情书 " />		
+		<meta name="author" content="Codrops" />
+		<link rel="shortcut icon" href="../favicon.ico">
+		<link rel="stylesheet" type="text/css" href="css2/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="css2/demo.css" />
+		<link rel="stylesheet" type="text/css" href="css2/component.css" />
+		<script src="js/snap.svg-min.js"></script>
+	</head>
+	<body>
+		<div id="pagewrap" class="pagewrap">
+			<div class="container show" id="page-1">
+				<header class="codrops-header">
+					<h1 style="margin-top:100px">一封小情书 <span></span></h1>
+				</header>
+				<section class="columns clearfix">
+					<div class="column">
+						<nav class="codrops-demos">
+							<p>111111111111111</p>
+							<p>22222222222</p>
+							<p>33333333333333333333333</p>
+							<p>444444444444444444</p>
+							<p>5555555555</p>
+							<p>666666666666666</p>
+							<p>777777777777</p>
+							<p><a href="picture2.html">图集</a></p>
+						</nav>
+					</div>
+					<div class="column">
+						<p></p>						
+					</div>
+				</section>
+			<div class="footer-banner" style="width:728px; margin:30px auto"></div>
+			</div>
+			<div id="loader" class="pageload-overlay" data-opening="M20,15 50,30 50,30 30,30 Z;M0,0 80,0 50,30 20,45 Z;M0,0 80,0 60,45 0,60 Z;M0,0 80,0 80,60 0,60 Z" data-closing="M0,0 80,0 60,45 0,60 Z;M0,0 80,0 50,30 20,45 Z;M20,15 50,30 50,30 30,30 Z;M30,30 50,30 50,30 30,30 Z">
+				<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 80 60" preserveAspectRatio="none">
+					<path d="M30,30 50,30 50,30 30,30 Z"/>
+				</svg>
+			</div>
+		</div>
+		<script src="js/classie.js"></script>
+		<script src="js/svgLoader.js"></script>
+		<script>
+			(function() {
+				var pageWrap = document.getElementById( 'pagewrap' ),
+					pages = [].slice.call( pageWrap.querySelectorAll( 'div.container' ) ),
+					currentPage = 0,
+					triggerLoading = [].slice.call( pageWrap.querySelectorAll( 'a.pageload-link' ) ),
+					loader = new SVGLoader( document.getElementById( 'loader' ), { speedIn : 100 } );
+				function init() {
+					triggerLoading.forEach( function( trigger ) {
+						trigger.addEventListener( 'click', function( ev ) {
+							ev.preventDefault();
+							loader.show();
+							setTimeout( function() {
+								loader.hide();
+								classie.removeClass( pages[ currentPage ], 'show' );
+								currentPage = currentPage ? 0 : 1;
+								classie.addClass( pages[ currentPage ], 'show' );
+							}, 2000 );
+						} );
+					} );	
+				}
+
+				init();
+			})();
+		</script>
+	</body>
+</html>
