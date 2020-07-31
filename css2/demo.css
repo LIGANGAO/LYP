@@ -66,7 +66,7 @@ a:hover, a:focus {
 	width: 100%;
 	text-transform: uppercase;
 	font-weight: 700;
-	font-size: 0.69em;
+	font-size: 0.5em;
 	line-height: 2.2;
 }
 
@@ -113,7 +113,7 @@ section {
 }
 
 section h2 {
-	font-size: 2.6em;
+	font-size: 2.5em;
 	font-weight: 300;
 	padding: 4em 0 0.4em;
 }
@@ -195,7 +195,7 @@ section p {
 	background: rgba(0,0,0,0.25);
 	text-transform: uppercase;
 	letter-spacing: 1px;
-	font-size: 0.6em;
+	font-size: 0.5em;
 	white-space: nowrap;
 }
 
